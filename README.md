@@ -1,4 +1,7 @@
-# homework
+# todo-list
+
+## 介绍
+    基于vue3 + vuex + element3实现的简易todo-list
 
 ## Project setup
 ```
