@@ -1,6 +1,3 @@
-// 输入框组件
-// 暗号：天天向上
-
 <template>
     <input @change="onChange" placeholder="请输入todo" autofocus="autofocus">
 </template>

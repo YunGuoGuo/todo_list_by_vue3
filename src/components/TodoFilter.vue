@@ -1,6 +1,3 @@
-// 筛选器组件
-// 暗号：天天向上
-
 <template>
     <div v-if="todoListLength">
         <el-button class="btn" type="primary" size="small" @click="showAll" round>all</el-button>

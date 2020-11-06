@@ -1,6 +1,3 @@
-// todo项组件
-// 暗号：天天向上
-
 <template>
     <div v-show="item.canShow" :style="item.complate? 'background-color: #ddd;' : ''">
         <span :style="item.complate? 'text-decoration:line-through;' : ''">{{item.name}}</span>

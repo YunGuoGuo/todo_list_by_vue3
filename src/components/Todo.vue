@@ -1,6 +1,3 @@
-// todo-list组件
-// 暗号：天天向上
-
 <template>
     <div>
         <todo-input></todo-input>

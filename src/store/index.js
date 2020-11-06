@@ -1,7 +1,3 @@
-// vuex store文件
-// 暗号：天天向上
-
-
 import { createStore } from "vuex";
 
 export default createStore({
