@@ -2,7 +2,12 @@ import { createStore } from "vuex";
 
 export default createStore({
     state: {
-        todoList: []
+        todoList: [],
+        saveTodoListToLocalStorage() {
+            console.log(this)
+            let localStorageTodoList = JSON.stringify(this.todoList)
+            localStorage.setItem('todoList', localStorageTodoList)
+        }
     },
     mutations: {
         addTodoItem(state, name) {
@@ -12,11 +17,13 @@ export default createStore({
                 complate: false,
                 canShow: true
             })
+            state.saveTodoListToLocalStorage()
         },
         deleteItem(state, id) {
             state.todoList = state.todoList.filter((item) => {
                 return item.id != id
             })
+            state.saveTodoListToLocalStorage()
         },
         revokeItem(state, id) {
             state.todoList.map((item) => {
@@ -24,6 +31,7 @@ export default createStore({
                     item.complate = false
                 }
             })
+            state.saveTodoListToLocalStorage()
         },
         complateItem(state, id) {
             state.todoList.map((item) => {
@@ -31,12 +39,13 @@ export default createStore({
                     item.complate = true
                 }
             })
-            console.log(state.todoList)
+            state.saveTodoListToLocalStorage()
         },
         showAllItem(state) {
             state.todoList.map((item) => {
                 item.canShow = true
             })
+            state.saveTodoListToLocalStorage()
         },
         showActiveItem(state) {
             state.todoList.map((item) => {
@@ -46,10 +55,22 @@ export default createStore({
                     item.canShow = true
                 }
             })
+            state.saveTodoListToLocalStorage()
+        },
+        showDoneItem(state) {
+            state.todoList.map((item) => {
+                if (item.complate) {
+                    item.canShow = true
+                } else {
+                    item.canShow = false
+                }
+            })
+            state.saveTodoListToLocalStorage()
         },
         clearAllItem(state) {
             state.todoList = []
-        }
+            state.saveTodoListToLocalStorage()
+        },
     },
     actions: {},
     modules: {}

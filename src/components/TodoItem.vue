@@ -52,13 +52,14 @@ import { readonly } from 'vue'
         align-self: center;
     }
     span{
-        float: left;
-        flex-grow: 40;
         text-align: left;
+        width: 70%;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
     }
     .btn{
-        float: right;
+        width: 15%;
         margin-left: 10px;
-        flex-grow:1;
     }
 </style>

@@ -2,6 +2,7 @@
     <div v-if="todoListLength">
         <el-button class="btn" type="primary" size="small" @click="showAll" round>all</el-button>
         <el-button class="btn" type="primary" size="small" @click="showActive" round>active</el-button>
+        <el-button class="btn" type="primary" size="small" @click="showDone" round>done</el-button>
         <el-button class="btn" type="primary" size="small" @click="clearAll" round>clear</el-button>
     </div>
 </template>
@@ -26,12 +27,16 @@ import { computed } from "vue"
             function clearAll(){
                 store.commit("clearAllItem")
             }
+            function showDone(){
+                store.commit("showDoneItem")
+            }
 
 
             return {
                 todoListLength,
                 showActive,
                 showAll,
+                showDone,
                 clearAll
             }
         }
@@ -39,7 +44,14 @@ import { computed } from "vue"
 </script>
 
 <style scoped>
+    div{
+        width: 90%;
+        padding: 0px 10px 0 10px;
+        margin: 5px auto;
+        display: flex;
+        justify-content: center;
+    }
     .btn{
-        width: 100px;
+        width: 20%;
     }
 </style>
